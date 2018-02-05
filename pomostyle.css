@@ -53,78 +53,44 @@ html, body {
 	height : 100%;
 }
 
-.pomo-wrapper-outer {
-	position : absolute;
-	border : none;
+.outer-wrapper {
+	display : inline-block;
+	width: 100%;
 	height : 100%;
-	width  : 100%;
-	background-color : #31A9B8;
+	background : #31A9B8;
+
 }
 
-.pomo-wrapper-inner{
-	border :none;
-	margin : 5%;
-	height : calc(100% - 10vw);
-	width  : 90%;
-	background-color : #31A9B8;
+.inner-wrapper {
+	max-height : 280px;
+	margin : calc((100vh - 280px - 84px) / 2) 0;
+	background : #31A9B8;
+	text-align: center;
+
 }
 
-.not-timer-controls-div {
+.inner-wrapper {
+	display : block;
 	height : 70%;
-	display : flex;
-	flex-flow : column wrap;
-	justify-content: space-around;
-	align-items: center;
-	margin-bottom : 5vh;
-	background-color: #fff;
-	border-radius : 8px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.countdown-timer-div {
-	display : flex;
-	flex-flow : column wrap;
-	justify-content : center;
-	border : none;
-	text-align : center;
-	height : 38%;
+	max-height : 100vh;
 	width : 90%;
+	margin : 5vh auto;
 }
 
-.timer-text {
-	font-family: 'Indie Flower', cursive;
-	font-size : 32px;
-	color : #F5BE41;
-	line-height : 80%;
+.circle-wrapper {
+	background : #31A9B8;
 }
 
-.misc-btns-div {
-	display: flex;
-	flex-flow : row nowrap;
-	justify-content: space-around;
-	align-items : center;
-	border : none;
-	height : 20%;
-	width : 50%;
-}
-
-.center-btn {
-	border-radius : 8px;
-	font-size : 30px;
-	background-color : white;
-	color : #F5BE41;
-	border: none;
+.circle {
+	background : #fff;
 	height : 100%;
-	width : 40%;
+	width : 100%;
+
 }
 
-.timer-controls-div {
-	display : flex;
-	flex-flow : row nowrap;
-	justify-content : space-around;
-	height : 25%;
-	width  : 100%;
-	border : none;
+.controls-wrapper {
+	background : #31A9B8;
+	height : 84px;
 }
 
 .control-btn {
@@ -136,8 +102,101 @@ html, body {
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	transition: box-shadow 300ms linear;
 	width : 30%;
+	height : 100%;
 }
 
-.control-btn:focus {
-	box-shadow: none;
+
+@media (max-height : 364px) and (max-width : 364px) {
+
+	.circle-wrapper {
+		height : 100%;
+		display : flex;
+		flex-flow : column wrap;
+		justify-content: space-around;
+		align-items: center;
+		margin-bottom : 5vh;
+		background-color: #fff;
+		border-radius : 8px;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);	
+	}
+
+	.controls-wrapper {
+		display : flex;
+		flex-flow : row nowrap;
+		justify-content: space-between;
+		align-items : center;
+		height : 22.5%;
+		width : 100%;
+		margin : 0 auto;
+	}
+
+}
+
+@media (min-height : 364px) and (orientation : portrait) {
+	
+	.circle {
+		padding-top : 100%;
+		border-radius : 50%;
+	}
+
+	.outer-wrapper {
+		position : absolute;
+		display: flex;
+		flex-flow : row nowrap;
+		justify-content : center;
+		align-items : center;
+	}
+
+	.inner-wrapper {
+		display : block;
+		height : 100%;
+		max-height : calc(100vw + 84px);
+		width : 100%;
+		max-width : calc(100vh - 84px);	
+	}
+
+	.circle-wrapper {
+		width : 100%;
+	}
+
+}
+
+@media (min-height : 768px) and (orientation : portrait) {
+	
+	.circle {
+		padding-top : 100%;
+		border-radius : 50%;
+	}
+
+	.inner-wrapper {
+		max-width: 500px;
+		margin : calc((100vh - 500px - 84px) / 2) auto;
+	}
+}
+
+@media (min-height : 364px) and (min-width : 364px) and (orientation : landscape) {
+
+	.circle {
+		height : 0;
+		padding-top : 100%;
+		border-radius : 50%;
+	}
+
+	.inner-wrapper {
+		display : block;
+		width : 75%;
+		max-width: calc(100vh - 84px);
+		margin : 0 auto;
+	}
+
+}
+
+@media (min-height : 768px) and (orientation : landscape) {
+
+	.inner-wrapper {
+		width : 75%;
+		max-width : 500px;
+		margin : calc((100vh - 280px - 84px) / 2) auto;
+	}
+
 }
