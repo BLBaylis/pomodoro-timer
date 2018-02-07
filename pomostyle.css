@@ -199,14 +199,17 @@ html, body {
 
 	.wrapper {
 		background : steelblue;
+		height : calc(391.6px + (210.2 * (100vh - 480px) / 170));
+		min-width : 290px;
 		width : calc(290px + (225.5 * (100vh - 480px) / 170));
-		max-width : 500px;
+		max-width : 90vw;
+		margin : auto;
 	}
 
 	.circle-wrapper {
 		background : steelblue;
 		height : calc(290px + (225.5 * (100vh - 480px) / 170));
-		max-height : 500px;
+		max-height : 90vw;
 		margin-bottom : 15px;
 	}
 
