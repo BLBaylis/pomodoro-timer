@@ -234,3 +234,16 @@ html, body {
 	}
 
 }
+
+@media (min-width : 600px) and (min-height : 650px) {
+
+	.wrapper {
+		height : 635px;
+		width : 500px;
+	}
+
+	.circle-wrapper {
+		height : 500px;
+	}
+
+}
