@@ -238,12 +238,21 @@ html, body {
 @media (min-width : 600px) and (min-height : 650px) {
 
 	.wrapper {
-		height : 635px;
+		height : 665px;
 		width : 500px;
 	}
 
 	.circle-wrapper {
 		height : 500px;
+		margin-bottom : 45px;
+	}
+
+	.controls-wrapper {
+		height : 120px;
+	}
+
+	.control-btn {
+		width : 120px;
 	}
 
 }
