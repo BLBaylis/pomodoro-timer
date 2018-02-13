@@ -49,210 +49,398 @@ table {
 
 /* End of CSS Reset*/
 
-html, body {
+body, html {
 	height : 100%;
-	background : steelblue;
 }
 
-.anti-collapse-wrapper {
-	display : inline-block;
- 	height : 100%;
- 	width : 100%;
+body {
+  	height : 100vh;
+  	width : 100vw;
+  	overflow : hidden;
+  	position : relative;
+  	z-index : 0;
 }
+
+h1 {
+	font-size : 27px;
+	font-family : "indie flower", cursive;
+	color : #F5BE41;
+	line-height : 33px;
+}
+
+h3 {
+	display : inline-block;
+	font-family : "indie flower", cursive;
+	color : #F5BE41;
+	border : none;
+	font-size : 40px;
+}
+
+/*ALL BACKGROUND ANIMATION CSS*/
+
+.bg-wrapper {
+  	display : inline-block;
+  	position : relative;
+	height : 100%;
+	width : 100%;
+	background-color : #31A9B8;
+	padding : 0;
+	margin : 0;
+	z-index : -100;
+}
+
+.to-be-covered {
+	position : absolute;
+	height : 100vh;
+	width : 100vw;
+	background-color : #31A9B8;
+	z-index : -4;
+}
+
+.box {
+	height : 75vw;
+	width : 75vw;
+	background-color : #31A9B8;
+	position : absolute;
+	left : -25vw;
+	bottom : 50%;
+	z-index : -3;
+  	border : none;
+  	transform-origin : 100% 100%;
+}
+
+.cover-box {
+  	position : absolute;
+  	height  : 75vw;
+  	width  : 75vw;
+  	background-color : #31A9B8;
+  	left : -25vw;
+  	bottom : 50%;
+    border : none;
+  	overflow : hidden;
+  	z-index : -2;
+}
+
+.deg90 {
+	animation : rotate90deg 10s linear 0s 1 forwards;
+}
+
+.deg180 {
+	animation : rotate180deg 10s linear 0s 1 forwards;
+}
+
+.deg270 {
+	animation : rotate270deg 10s linear 0s 1 forwards;
+}
+
+.deg360 {
+	z-index: -4;
+	animation : rotate360deg 10s linear 0s 1 forwards;
+}
+
+.paused {
+	animation-play-state : paused;
+}
+
+.colour-change {
+	animation : colour-change 10s linear 0s 1 forwards;
+}
+
+@keyframes colour-change {
+
+	0% {
+
+	}
+
+	99.99% {
+		background-color : #31A9B8;
+
+	}
+
+	100% {
+		background-color : #c73721;
+	}
+
+}
+
+@keyframes rotate90deg {
+
+	0% {
+		transform : rotate(0deg);
+	}
+
+	25% {
+		transform : rotate(90deg);
+	}
+
+	100% {
+		transform : rotate(90deg);
+		background-color : #c73721;
+  }
+
+}
+
+@keyframes rotate180deg {
+
+	0% {
+		transform : rotate(0deg);
+	}
+
+	25%{
+		transform : rotate(90deg);
+	}
+
+	50%{
+	   transform : rotate(180deg);
+	}
+
+	100% {
+		transform : rotate(180deg);
+		background-color : #c73721;
+	}
+
+}
+
+@keyframes rotate270deg {
+
+	0% {
+		transform : rotate(0deg);
+	}
+
+	25%{
+		transform : rotate(90deg);
+	}
+
+	50%{
+		transform : rotate(180deg);
+	}
+
+	75%{
+		transform : rotate(270deg);
+	}
+
+	100% {
+		transform : rotate(270deg);
+    	background-color : #c73721;
+  	}
+
+}
+
+@keyframes rotate360deg {
+
+	0% {
+    	transform : rotate(0deg);
+    	z-index : -4;
+    }
+  
+  	25% {
+    	transform : rotate(90deg);
+  	}
+  
+  	50% {
+    	transform : rotate(180deg);
+  	}
+  
+  	75% {
+   	 transform : rotate(270deg);
+   	 z-index : -1;
+  	}
+  
+  	100% {
+    	transform : rotate(360deg);
+    	z-index : -1;
+    	background-color : #c73721;
+  	}
+
+}
+
+@media (orientation : portrait) {
+
+	.cover-box {
+    	height : 75vh;
+   		width : 75vh;
+   		top : -25vh;
+    	left : initial;
+    	right : 50%;
+  	}
+  
+  	.box {
+    	height : 75vh;
+    	width : 75vh;
+    	top : -25vh;
+    	left : initial;
+    	right : 50%;
+  	}
+
+}
+
+/*END OF BACKGROUND ANIMATION CSS*/
 
 .wrapper-outer {
+	position : relative;
 	height : 100%;
 	width : 100%;
 	display : flex;
 	flex-flow: column nowrap;
 	align-items : center;
 	justify-content: center;
+	z-index : -99;
 }
 
-@media (max-height : 480px) {
+.title-div {
+	position : absolute;
+	top : 0;
+	left : 0;
+	height : 33px;
+	background-color : #fff;
+	width : 100%;
+	text-align : center;
+}
 
-	.wrapper {
-		display: flex;
-		flex-flow : column nowrap;
-		justify-content : center;
-		height : 95%;
-		width : calc(100% - 8vh);
-		background-color : steelblue;
-		margin : 4vh auto;
+.wrapper-inner {
+	height : calc(100% - 30px - 33px);
+	max-height : 680px;
+	width : calc(100% - 30px);
+	max-width : 500px;
+	margin : 15px;
+	margin-top : 48px;
+}
+
+.circle-wrapper {
+	height : calc(100% - 15px - 75px);
+	background-color : #fff;
+	margin-bottom : 15px;
+	border-radius : 8px;
+	margin : 0 auto 15px;
+}
+
+.controls-wrapper {
+	display : flex;
+	flex-flow : row nowrap;
+	justify-content : space-between;
+	align-items : flex-end;
+	z-index : 5;
+	margin : 0 auto;
+}
+
+.control-btn {
+	height : 75px; 
+	width : calc((100% - 30px) / 3);
+	font-size : 40px;
+	border-radius : 8px;
+	color : #F5BE41;
+	border: none;
+	cursor : pointer;
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	transition : all 200ms ease-in-out;
+	background-color: #fff;
+}
+
+.control-btn:hover {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+	background-color: #F5BE41;
+	color : #fff;
+}
+
+@media (min-height: 455px) and (min-width: 320px) and (orientation : portrait) {
+
+	.wrapper-inner {
+		height : auto;
+		width : calc(100% - 30px);
+		max-width : 500px;
 	}
 
 	.circle-wrapper {
-		height : 88%;
-		background-color : white;
-		margin-bottom : 4vh;
-	}
-
-	.controls-wrapper {
-		background-color : steelblue;
-		display : flex;
-		flex-flow : row nowrap;
-		justify-content : space-between;
-		align-items : flex-end;
-	}
-
-	.control-btn {
-		height : 86.6px;
-		width : 30%;
-	}
-}
-
-@media (max-width : 480px) {
-
-	.wrapper {
-		display: flex;
-		flex-flow : column nowrap;
-		justify-content : center;
-		height : 95%;
-		width : calc(100% - 8vh);
-		background-color : steelblue;
-		margin : 4vh auto;
-	}
-
-	.circle-wrapper {
-		height : 88%;
-		background-color : white;
-		margin-bottom : 4vh;
-	}
-
-	.controls-wrapper {
-		background-color : steelblue;
-		display : flex;
-		flex-flow : row nowrap;
-		justify-content : space-between;
-		align-items : flex-end;
-	}
-
-	.control-btn {
-		height : 86.6px;
-		width : 30%;
-
-	}
-
-}
-
-@media (min-width: 320px) and (min-height: 480px) {
-
-	.wrapper {
-		background : steelblue;
-		height : calc(391.6px + (243.4 * (100vh - 480px) / 170));
-		min-width : calc(290px + (210 * (100vh - 480px) / 170));;
-		width : calc(290px + (210 * (100vh - 480px) / 170));
-		margin : auto;
-	}
-
-	.circle-wrapper {
-		background : steelblue;
-		height : calc(290px + (210 * (100vh - 480px) / 170));
-		margin-bottom : 15px;
+		height : calc(290px + (210 * (100vw - 320px) / 230));
+		max-height : calc(100vh - 165px);
+		width : calc(290px + (210 * (100vw - 320px) / 230));
+		max-width : calc(100vh - 165px);
+		background-color : transparent;
 	}
 
 	.circle {
-		background : white;
 		border-radius : 50%;
 		height : 100%;
 		width : 100%;
+		background-color : #fff;
 	}
 
 	.controls-wrapper {
-		display : flex;
-		flex-flow : row nowrap;
-		justify-content: space-between;
-		background : steelblue;
-		height : 86.6px;
+		width : calc(290px + (210 * (100vw - 320px) / 230));
 	}
 
 	.control-btn {
-		background : white;
-		width : 86.6px;
+		height : 87px;
 	}
+
 }
 
-@media (min-height : 650px) {
+@media (min-height : 455px) and (min-width : 320px) and (orientation : landscape) {
 
-	.wrapper {
-		height : 635px;
+	.wrapper-inner {
+		height : auto;
+		width : calc(100% - 30px);
+		max-width : 500px;
+	}
+
+	.circle-wrapper {
+		height : calc(290px + (210 * (100vh - 320px) / 360));
+		max-height : calc(100vh - 165px);
+		width : calc(290px + (210 * (100vh - 320px) / 360));
+		max-width : calc(100vh - 165px);
+		background-color : transparent;
+	}
+
+	.controls-wrapper {
+		width : calc(290px + (210 * (100vh - 320px) / 360));
+	}
+
+	.circle {
+		border-radius : 50%;
+		height : 100%;
+		width : 100%;
+		background-color : #fff;
+	}
+
+}
+
+@media (min-height : 680px) and (min-width : 530px) {
+
+	.title-div {
+		position : absolute;
+		top : 15px;
+		left : 0;
+		padding-top : 8px;
+		height : 35px;
+		line-height : 40px;
+	}
+
+	h1 {
+		font-size : 40px;
+	}
+
+	.wrapper-inner {
+		height : auto;
+		max-height : none;
 		width : 500px;
-		min-width : 500px;
-		margin : auto ;
+		margin-top : 73px;
 	}
 
 	.circle-wrapper {
 		height : 500px;
-	}
-
-	.controls-wrapper {
-		height : 120px;
-	}
-
-	.control-btn {
-		width : 120px;
-	}
-
-}
-
-@media (min-width : 320px) and (min-height : 480px) and (orientation : portrait) {
-
-	.wrapper {
-		background : steelblue;
-		height : calc(391.6px + (210.2 * (100vh - 480px) / 170));
-		min-width : 290px;
-		width : calc(290px + (225.5 * (100vh - 480px) / 170));
-		max-width : 90vw;
-		margin : auto;
-	}
-
-	.circle-wrapper {
-		background : steelblue;
-		height : calc(290px + (225.5 * (100vh - 480px) / 170));
-		max-height : 90vw;
-		margin-bottom : 15px;
+		width : 500px;
+		background-color : transparent;
 	}
 
 	.circle {
-		background : white;
 		border-radius : 50%;
 		height : 100%;
 		width : 100%;
+		background-color : #fff;
 	}
 
 	.controls-wrapper {
-		display : flex;
-		flex-flow : row nowrap;
-		justify-content: space-between;
-		background : steelblue;
-		height : 86.6px;
-	}
-
-	.control-btn {
-		background : white;
-		width : 86.6px;
-	}
-
-}
-
-@media (min-width : 600px) and (min-height : 650px) {
-
-	.wrapper {
-		height : 665px;
 		width : 500px;
-	}
-
-	.circle-wrapper {
-		height : 500px;
-		margin-bottom : 45px;
-	}
-
-	.controls-wrapper {
-		height : 120px;
-	}
-
-	.control-btn {
-		width : 120px;
 	}
 
 }
