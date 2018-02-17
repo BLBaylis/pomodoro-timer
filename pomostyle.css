@@ -121,39 +121,76 @@ h3 {
   	z-index : -2;
 }
 
-.deg90 {
-	animation : rotate90deg 10s linear 0s 1 forwards;
+.deg90-green-to-red {
+	animation : rotate90deg 10s linear 0s 1;
+	animation-name : rotate90deg, green-to-red-full;
 }
 
-.deg180 {
-	animation : rotate180deg 10s linear 0s 1 forwards;
+.deg180-green-to-red {
+	animation : rotate180deg 10s linear 0s 1;
+	animation-name : rotate180deg, green-to-red-full;
 }
 
-.deg270 {
-	animation : rotate270deg 10s linear 0s 1 forwards;
+.deg270-green-to-red {
+	animation : rotate270deg 10s linear 0s 1;
+	animation-name : rotate270deg, green-to-red-full;
 }
 
-.deg360 {
+.deg360-green-to-red {
 	z-index: -4;
-	animation : rotate360deg 10s linear 0s 1 forwards;
+	animation : rotate360deg 10s linear 0s 1;
+	animation-name : rotate360deg, green-to-red-full;
+}
+
+.deg90-red-to-blue {
+	animation : rotate90deg 10s linear 0s 1;
+	animation-name : rotate90deg, red-to-blue-full;
+}
+
+.deg180-red-to-blue {
+	animation : rotate180deg 10s linear 0s 1;
+	animation-name : rotate180deg, red-to-blue-full;
+}
+
+.deg270-red-to-blue {
+	animation : rotate270deg 10s linear 0s 1;
+	animation-name : rotate270deg, red-to-blue-full;
+}
+
+.deg360-red-to-blue {
+	z-index: -4;
+	animation : rotate360deg 10s linear 0s 1;
+	animation-name : rotate360deg, red-to-blue-full;
+}
+
+.green {
+	background-color : #258039;
+}
+
+.red {
+	background-color:  #c73721;
+}
+
+.green-to-red-end {
+	animation : green-to-red-end 10s linear 0s 1 forwards;
+}
+
+.red-to-blue-end {
+	animation : red-to-blue-end 10s linear 0s 1 forwards;
 }
 
 .paused {
 	animation-play-state : paused;
 }
 
-.colour-change {
-	animation : colour-change 10s linear 0s 1 forwards;
-}
-
-@keyframes colour-change {
+@keyframes green-to-red-end {
 
 	0% {
 
 	}
 
 	99.99% {
-		background-color : #31A9B8;
+		background-color : #258039;
 
 	}
 
@@ -161,6 +198,46 @@ h3 {
 		background-color : #c73721;
 	}
 
+}
+
+@keyframes red-to-blue-end {
+
+	0% {
+
+	}
+
+	99.99% {
+		background-color : #c73721;
+
+	}
+
+	100% {
+		background-color : #31A9B8;
+	}
+
+}
+
+@keyframes green-to-red-full {
+
+	0% {
+
+	}
+
+	100% {
+		background-color : #c73721;
+	}
+}
+
+@keyframes red-to-blue-full {
+
+	0% {
+		
+	}
+
+	100% {
+		background-color : #31A9B8;
+	}
+	
 }
 
 @keyframes rotate90deg {
@@ -175,7 +252,6 @@ h3 {
 
 	100% {
 		transform : rotate(90deg);
-		background-color : #c73721;
   }
 
 }
@@ -196,7 +272,6 @@ h3 {
 
 	100% {
 		transform : rotate(180deg);
-		background-color : #c73721;
 	}
 
 }
@@ -221,7 +296,6 @@ h3 {
 
 	100% {
 		transform : rotate(270deg);
-    	background-color : #c73721;
   	}
 
 }
@@ -242,14 +316,13 @@ h3 {
   	}
   
   	75% {
-   	 transform : rotate(270deg);
-   	 z-index : -1;
+   	 	transform : rotate(270deg);
+   	 	z-index : -1;
   	}
   
   	100% {
     	transform : rotate(360deg);
     	z-index : -1;
-    	background-color : #c73721;
   	}
 
 }
@@ -314,6 +387,53 @@ h3 {
 	margin : 0 auto 15px;
 }
 
+.circle {
+	height : 100%;
+	width : 100%;
+	display : flex;
+	flex-flow : column nowrap;
+	justify-content: space-around;
+	align-items : center;
+}
+
+h3 {
+	font-size : calc(17px + (13 * (100vh - 280px) / 120));
+}
+
+.adjuster, .center-btn {
+	border :none;
+	color : #F5BE41;
+	background-color : #fff;
+	height : 30px;
+	cursor : pointer;
+}
+
+.adjuster:hover, .center-btn:hover {
+	border :none;
+	color : #31A9B8;
+	background-color : #fff;
+}
+
+.work-time, .break-time {
+	display : flex;
+	flex-flow : row nowrap;
+	justify-content : space-around;
+	align-items : center;
+	width : 75%;
+}
+
+.work-text, .break-text {
+	margin-top: 2.5px;
+}
+
+.time {
+	margin : 0 5px;
+}
+
+.center-btn-div {
+	margin-bottom : 5px;
+}
+
 .controls-wrapper {
 	display : flex;
 	flex-flow : row nowrap;
@@ -342,6 +462,13 @@ h3 {
 	color : #fff;
 }
 
+@media (min-height : 400px) {
+
+	h3 {
+		font-size : 30px;
+	}
+}
+
 @media (min-height: 455px) and (min-width: 320px) and (orientation : portrait) {
 
 	.wrapper-inner {
@@ -360,13 +487,33 @@ h3 {
 
 	.circle {
 		border-radius : 50%;
-		height : 100%;
-		width : 100%;
 		background-color : #fff;
+	}
+
+	h3 {
+		font-size : calc(30px + (20 * (100vw - 320px) / 210));
+	}
+
+	.work-text {
+		margin-top: 7.5vh
+	}
+
+	.center-btn-div {
+		margin-bottom : 7.5vh;
+	}
+
+	.center-btn, .adjuster {
+		height : calc(40px + (18 * (100vw - 320px) / 210));
+		width : calc(40px + (18 * (100vw - 320px) / 210));	
+	}
+
+	.center-btn .fa, .adjuster .fa {
+		font-size : calc(30px + (18 * (100vw - 320px) / 210));
 	}
 
 	.controls-wrapper {
 		width : calc(290px + (210 * (100vw - 320px) / 230));
+		max-width : calc(100vh - 165px);
 	}
 
 	.control-btn {
@@ -391,18 +538,53 @@ h3 {
 		background-color : transparent;
 	}
 
-	.controls-wrapper {
-		width : calc(290px + (210 * (100vh - 320px) / 360));
-	}
-
 	.circle {
 		border-radius : 50%;
-		height : 100%;
-		width : 100%;
 		background-color : #fff;
 	}
 
+	h3 {
+		font-size : calc(30px + (20 * (100vh - 455px) / 225));
+	}
+
+	.work-text { 
+		margin-top : 7.5vh;
+	}
+
+	.center-btn-div {
+		margin-bottom : 7.5vh;
+	}
+
+	.center-btn, .adjuster {
+		height : calc(40px + (18 * (100vw - 455px) / 225));
+		max-height : 65px;
+		width : calc(40px + (18 * (100vw - 455px) / 225));
+		max-height : 65px;	
+	}
+
+	.center-btn .fa, .adjuster .fa {
+		font-size : calc(30px + (18 * (100vw - 455px) / 225));
+	}
+
+	.controls-wrapper {
+		width : calc(290px + (210 * (100vh - 320px) / 360));
+		max-width : calc(100vh - 165px);
+	}
+
+	.control-btn {
+		height : 87px;
+	}
+
 }
+
+@media (min-width : 530px) {
+
+	.center-btn .fa, .adjuster .fa {
+		font-size : 48px;
+	}
+
+}
+
 
 @media (min-height : 680px) and (min-width : 530px) {
 
@@ -434,9 +616,21 @@ h3 {
 
 	.circle {
 		border-radius : 50%;
-		height : 100%;
-		width : 100%;
 		background-color : #fff;
+	}
+
+	h3 {
+		font-size : 50px;
+	}
+
+	.center-btn, .adjuster {
+		height : 60px;
+		width : 60px;
+		padding : 0;
+	}
+
+	.center-btn .fa, .adjuster .fa {
+		font-size : 50px;
 	}
 
 	.controls-wrapper {
@@ -444,3 +638,25 @@ h3 {
 	}
 
 }
+
+/*WORK PHASE CSS*/
+
+.hide {
+	display : none;
+}
+
+.text-timer-phase {
+	font-size : 30px;
+}
+
+.time-timer-phase {
+	font-size : 40px;
+}
+
+.center-btn .fa-timer-phase {
+	font-size : 40px;
+}
+
+/*BREAK PHASE CSS*/
+
+.tim
