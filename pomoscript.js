@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var timerInterval,
 adjustersObj = adjusters(),
-workDuration = 60000,
-breakDuration = 60000;
+workDuration = 10000,
+breakDuration = 10000;
 started = false,
 running = false,
 box = document.getElementsByClassName("box");
@@ -132,7 +132,7 @@ function breakPhaseCSSChanges() {
   document.getElementsByClassName("break-text")[0].classList.remove("hide");
   document.getElementsByClassName("break-text")[0].classList.add("text-timer-phase");
   document.getElementsByClassName("break-time")[0].classList.remove("hide");
-  document.getElementsByClassName("break-time")[0].classList.add("timer-timer-phase");
+  document.getElementsByClassName("break-time")[0].classList.add("time-timer-phase");
   document.getElementsByClassName("adjuster-down")[1].classList.add("hide");
   document.getElementsByClassName("adjuster-up")[1].classList.add("hide");
   document.getElementsByClassName("work-text")[0].classList.remove("text-timer-phase");

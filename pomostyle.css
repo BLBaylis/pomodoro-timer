@@ -462,6 +462,24 @@ h3 {
 	color : #fff;
 }
 
+/*WORK PHASE CSS*/
+
+.hide {
+	display : none;
+}
+
+.text-timer-phase {
+	font-size : 30px;
+}
+
+.time-timer-phase {
+	font-size : 40px;
+}
+
+.center-btn .fa-timer-phase {
+	font-size : 40px;
+}
+
 @media (min-height : 400px) {
 
 	h3 {
@@ -509,6 +527,15 @@ h3 {
 
 	.center-btn .fa, .adjuster .fa {
 		font-size : calc(30px + (18 * (100vw - 320px) / 210));
+	}
+
+	.text-timer-phase {
+		font-size : 50px;
+		margin-top : 7.5vh;
+	}
+
+	.time-timer-phase {
+		font-size : 60px;
 	}
 
 	.controls-wrapper {
@@ -638,25 +665,3 @@ h3 {
 	}
 
 }
-
-/*WORK PHASE CSS*/
-
-.hide {
-	display : none;
-}
-
-.text-timer-phase {
-	font-size : 30px;
-}
-
-.time-timer-phase {
-	font-size : 40px;
-}
-
-.center-btn .fa-timer-phase {
-	font-size : 40px;
-}
-
-/*BREAK PHASE CSS*/
-
-.tim
