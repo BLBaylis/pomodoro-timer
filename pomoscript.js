@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var timerInterval,
 adjustersObj = adjusters(),
-workDuration = 10000,
-breakDuration = 10000;
+workDuration = 60000,
+breakDuration = 60000;
 started = false,
 running = false,
 box = document.getElementsByClassName("box");
