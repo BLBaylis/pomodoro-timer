@@ -163,14 +163,6 @@ h3 {
 	animation-name : rotate360deg, red-to-blue-full;
 }
 
-.green {
-	background-color : #258039;
-}
-
-.red {
-	background-color:  #c73721;
-}
-
 .green-to-red-end {
 	animation : green-to-red-end 10s linear 0s 1 forwards;
 }
@@ -186,7 +178,7 @@ h3 {
 @keyframes green-to-red-end {
 
 	0% {
-
+		background-color : #258039
 	}
 
 	99.99% {
@@ -203,6 +195,7 @@ h3 {
 @keyframes red-to-blue-end {
 
 	0% {
+		background-color : #c73721;
 
 	}
 
@@ -220,6 +213,7 @@ h3 {
 @keyframes green-to-red-full {
 
 	0% {
+		background-color : #258039;
 
 	}
 
@@ -231,7 +225,7 @@ h3 {
 @keyframes red-to-blue-full {
 
 	0% {
-		
+		background-color : #c73721;
 	}
 
 	100% {
@@ -408,11 +402,13 @@ h3 {
 	cursor : pointer;
 }
 
-.adjuster:hover, .center-btn:hover {
+.adjuster:hover, .center-btn:hover, .adjuster:active, .center-btn:active {
 	border :none;
-	color : #31A9B8;
+	color : #ffcf63;
 	background-color : #fff;
 }
+
+
 
 .work-time, .break-time {
 	display : flex;

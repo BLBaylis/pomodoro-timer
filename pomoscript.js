@@ -50,15 +50,12 @@ function playAnimationWork(){
   box[3].classList.add("deg360-green-to-red");
   for (var i = 0; i < box.length; i++){
     box[i].classList.remove("paused");
-    box[i].classList.add("green");
     box[i].style.animationDuration = workDuration + "ms";
   }
   document.getElementsByClassName("to-be-covered")[0].classList.remove("paused");
-  document.getElementsByClassName("to-be-covered")[0].classList.add("green");
   document.getElementsByClassName("to-be-covered")[0].classList.add("green-to-red-end");
   document.getElementsByClassName("to-be-covered")[0].style.animationDuration = workDuration + "ms";
   document.getElementsByClassName("cover-box")[0].classList.remove("paused");
-  document.getElementsByClassName("cover-box")[0].classList.add("green");
   document.getElementsByClassName("cover-box")[0].classList.add("green-to-red-end");
   document.getElementsByClassName("cover-box")[0].style.animationDuration = workDuration + "ms";
 }
@@ -72,15 +69,12 @@ function playAnimationBreak() {
   }, 100);
   for (var i = 0; i < box.length; i++){
     box[i].classList.remove("paused");
-    box[i].classList.add("red");
     box[i].style.animationDuration = breakDuration + "ms";
   }
   document.getElementsByClassName("to-be-covered")[0].classList.remove("paused");
-  document.getElementsByClassName("to-be-covered")[0].classList.add("red");
   document.getElementsByClassName("to-be-covered")[0].classList.add("red-to-blue-end");
   document.getElementsByClassName("to-be-covered")[0].style.animationDuration = breakDuration + "ms";
   document.getElementsByClassName("cover-box")[0].classList.remove("paused");
-  document.getElementsByClassName("cover-box")[0].classList.add("red");
   document.getElementsByClassName("cover-box")[0].classList.add("red-to-blue-end");
   document.getElementsByClassName("cover-box")[0].style.animationDuration = breakDuration + "ms";
 }
@@ -103,17 +97,11 @@ function resetAnimation() {
     box[2].classList.remove("deg270-red-to-blue");
     box[3].classList.remove("deg360-red-to-blue");
     document.getElementsByClassName("to-be-covered")[0].classList.remove("green-to-red-end");
-    document.getElementsByClassName("to-be-covered")[0].classList.remove("green");
     document.getElementsByClassName("to-be-covered")[0].classList.remove("red-to-blue-end");
-    document.getElementsByClassName("to-be-covered")[0].classList.remove("red");
     document.getElementsByClassName("cover-box")[0].classList.remove("green-to-red-end");
-    document.getElementsByClassName("cover-box")[0].classList.remove("green");
     document.getElementsByClassName("cover-box")[0].classList.remove("red-to-blue-end");
-    document.getElementsByClassName("cover-box")[0].classList.remove("red");
     for (var i = 0; i < box.length; i++){
       box[i].classList.add("paused");
-      box[i].classList.remove("green");
-      box[i].classList.remove("red");
     }
 }
 
