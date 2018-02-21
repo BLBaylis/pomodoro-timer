@@ -163,6 +163,14 @@ h3 {
 	animation-name : rotate360deg, red-to-blue-full;
 }
 
+.green {
+	background-color : #258039;
+}
+
+.red {
+	background-color:  #c73721;
+}
+
 .green-to-red-end {
 	animation : green-to-red-end 10s linear 0s 1 forwards;
 }
@@ -178,7 +186,8 @@ h3 {
 @keyframes green-to-red-end {
 
 	0% {
-		background-color : #258039
+		background-color : #258039;
+
 	}
 
 	99.99% {
@@ -196,12 +205,10 @@ h3 {
 
 	0% {
 		background-color : #c73721;
-
 	}
 
 	99.99% {
 		background-color : #c73721;
-
 	}
 
 	100% {
@@ -214,7 +221,6 @@ h3 {
 
 	0% {
 		background-color : #258039;
-
 	}
 
 	100% {
@@ -408,8 +414,6 @@ h3 {
 	background-color : #fff;
 }
 
-
-
 .work-time, .break-time {
 	display : flex;
 	flex-flow : row nowrap;
@@ -452,7 +456,7 @@ h3 {
 	background-color: #fff;
 }
 
-.control-btn:hover {
+.control-btn:hover, .control-btn:active {
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 	background-color: #F5BE41;
 	color : #fff;
@@ -589,6 +593,15 @@ h3 {
 		font-size : calc(30px + (18 * (100vw - 455px) / 225));
 	}
 
+	.text-timer-phase {
+		font-size : 50px;
+		margin-top : 7.5vh;
+	}
+
+	.time-timer-phase {
+		font-size : 60px;
+	}
+
 	.controls-wrapper {
 		width : calc(290px + (210 * (100vh - 320px) / 360));
 		max-width : calc(100vh - 165px);
@@ -654,6 +667,15 @@ h3 {
 
 	.center-btn .fa, .adjuster .fa {
 		font-size : 50px;
+	}
+
+	.text-timer-phase {
+		font-size : 50px;
+		margin-top : 7.5vh;
+	}
+
+	.time-timer-phase {
+		font-size : 60px;
 	}
 
 	.controls-wrapper {

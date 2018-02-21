@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementsByClassName("play")[0].addEventListener("click", function(){
     playAnimationWork();
-    workPhaseCSSChanges();
     if (!started && !running) {
-        timerInterval = timerFunction(workDuration, "work");
-      } else if (started && !running) {
-        timerInterval.start();
-      }
+      workPhaseCSSChanges();
+      timerInterval = timerFunction(workDuration, "work");
+    } else if (started && !running) {
+      timerInterval.start();
+    }
   });
   document.getElementsByClassName("pause")[0].addEventListener("click", function(){
     pauseAnimation();
@@ -39,7 +39,8 @@ workDuration = 60000,
 breakDuration = 60000;
 started = false,
 running = false,
-box = document.getElementsByClassName("box");
+box = document.getElementsByClassName("box"),
+chimes = document.getElementsByClassName("chimes");
 
 
 function playAnimationWork(){
@@ -200,6 +201,7 @@ function timerFunction(duration, whichPhase) {
     if (currentTime >= duration) {
       timerObj.stop();
       if (whichPhase === "work"){
+        chimes[0].play();
         breakPhaseCSSChanges();
         resetAnimation();
         playAnimationBreak();
@@ -207,6 +209,7 @@ function timerFunction(duration, whichPhase) {
         whichPhase = "break";
         timerObj.start();
       } else if (whichPhase === "break"){
+        chimes[0].play();
         undoCSSChanges();
         resetAnimation();
       }
