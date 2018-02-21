@@ -186,7 +186,6 @@ h3 {
 @keyframes green-to-red-end {
 
 	0% {
-		background-color : #258039;
 
 	}
 
@@ -204,11 +203,12 @@ h3 {
 @keyframes red-to-blue-end {
 
 	0% {
-		background-color : #c73721;
+
 	}
 
 	99.99% {
 		background-color : #c73721;
+
 	}
 
 	100% {
@@ -220,7 +220,7 @@ h3 {
 @keyframes green-to-red-full {
 
 	0% {
-		background-color : #258039;
+
 	}
 
 	100% {
@@ -231,7 +231,7 @@ h3 {
 @keyframes red-to-blue-full {
 
 	0% {
-		background-color : #c73721;
+		
 	}
 
 	100% {
@@ -408,9 +408,9 @@ h3 {
 	cursor : pointer;
 }
 
-.adjuster:hover, .center-btn:hover, .adjuster:active, .center-btn:active {
+.adjuster:hover, .center-btn:hover {
 	border :none;
-	color : #ffcf63;
+	color : #31A9B8;
 	background-color : #fff;
 }
 
@@ -456,7 +456,7 @@ h3 {
 	background-color: #fff;
 }
 
-.control-btn:hover, .control-btn:active {
+.control-btn:hover {
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 	background-color: #F5BE41;
 	color : #fff;
@@ -593,15 +593,6 @@ h3 {
 		font-size : calc(30px + (18 * (100vw - 455px) / 225));
 	}
 
-	.text-timer-phase {
-		font-size : 50px;
-		margin-top : 7.5vh;
-	}
-
-	.time-timer-phase {
-		font-size : 60px;
-	}
-
 	.controls-wrapper {
 		width : calc(290px + (210 * (100vh - 320px) / 360));
 		max-width : calc(100vh - 165px);
@@ -667,15 +658,6 @@ h3 {
 
 	.center-btn .fa, .adjuster .fa {
 		font-size : 50px;
-	}
-
-	.text-timer-phase {
-		font-size : 50px;
-		margin-top : 7.5vh;
-	}
-
-	.time-timer-phase {
-		font-size : 60px;
 	}
 
 	.controls-wrapper {
