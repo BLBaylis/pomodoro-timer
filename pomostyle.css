@@ -393,7 +393,7 @@ h3 {
 	font-family : "indie flower", cursive;
 	color : #fff;
 	font-size : 22px;
-	border-top : solid 1px steelblue;
+	border-top : solid 1px #F5BE41;
 	overflow: hidden;
 }
 
@@ -450,11 +450,16 @@ h3 {
 }
 
 .adjuster, .center-btn {
+	display: table-cell;
 	border :none;
 	color : #F5BE41;
 	background-color : #fff;
 	height : 30px;
 	cursor : pointer;
+}
+
+.center-btn .fa, .adjuster .fa {
+	vertical-align : middle;
 }
 
 .adjuster:hover, .center-btn:hover, .adjuster:active, .center-btn:active {

@@ -258,7 +258,7 @@ function adjusters(){
     if (whichPhase === "work" && workDuration >= 120000){
       workDuration -= 60000;
       document.getElementsByClassName(whichPhase + "-time-span")[0].innerHTML = numberDecorator(workDuration / 60000) + " : 00";
-    } else if (whichPhase === "break" && breakkDuration >= 120000) {
+    } else if (whichPhase === "break" && breakDuration >= 120000) {
       breakDuration -= 60000;
       document.getElementsByClassName(whichPhase + "-time-span")[0].innerHTML = numberDecorator(breakDuration / 60000) + " : 00";
     }
