@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     playAnimationWork();
     if (!started && !running) {
       workPhaseCSSChanges();
+      chimes[0].play();
       timerInterval = timerFunction(workDuration, "work");
     } else if (started && !running) {
       timerInterval.start();
