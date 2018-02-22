@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementsByClassName("adjuster-down")[1].addEventListener("click", function(){
     adjustersObj.down("break");
   });
+  document.getElementsByClassName("volume")[0].addEventListener("click", volume);
+  document.getElementsByClassName("info")[0].addEventListener("click", info);
+  document.getElementsByClassName("close")[0].addEventListener("click", info);
 });
 
 var timerInterval,
@@ -251,16 +254,50 @@ function adjusters(){
   }
 
   adjustersObj.down = function(whichPhase) {
-    if (whichPhase === "work"){
+    if (whichPhase === "work" && workDuration >= 120000){
       workDuration -= 60000;
       document.getElementsByClassName(whichPhase + "-time-span")[0].innerHTML = numberDecorator(workDuration / 60000) + " : 00";
-    } else if (whichPhase === "break") {
+    } else if (whichPhase === "break" && breakkDuration >= 120000) {
       breakDuration -= 60000;
       document.getElementsByClassName(whichPhase + "-time-span")[0].innerHTML = numberDecorator(breakDuration / 60000) + " : 00";
-    } else {
-      console.log("adjustersObj.down() received incorrect variable");
     }
   }
 
   return adjustersObj;
+}
+
+function volume(event) {
+  var eventTargetClassList = event.target.classList;
+  if (eventTargetClassList.contains("center-btn")){
+    eventTargetClassList = event.target.children[0].classList;
+  }
+  if (eventTargetClassList.contains("fa-volume-up")){
+    chimes[0].volume = 0.5;
+    eventTargetClassList.remove("fa-volume-up");
+    eventTargetClassList.add("fa-volume-down");
+  } else if (eventTargetClassList.contains("fa-volume-down")){
+    chimes[0].volume = 0;
+    eventTargetClassList.remove("fa-volume-down");
+    eventTargetClassList.add("fa-volume-off");
+  } else if (eventTargetClassList.contains("fa-volume-off")){
+    chimes[0].volume = 1;
+    eventTargetClassList.remove("fa-volume-off");
+    eventTargetClassList.add("fa-volume-up");
+  }
+  chimes[0].play();
+}
+
+function info(event){
+  var circleWrapper = document.getElementsByClassName("circle-wrapper")[0];;
+  if (event.target.classList.contains("center-btn") || event.target.classList.contains("fa-question-circle-o")){
+    var height = window.getComputedStyle(circleWrapper, null).getPropertyValue("height");
+    var width = window.getComputedStyle(circleWrapper, null).getPropertyValue("width");
+    document.getElementsByClassName("info-div")[0].style.height = height;
+    document.getElementsByClassName("info-div")[0].style.width = width;
+    document.getElementsByClassName("info-div")[0].classList.add("show-info");
+    circleWrapper.classList.add("hide");
+  } else if (event.target.classList.contains("close")) {
+    document.getElementsByClassName("info-div")[0].classList.remove("show-info");
+    circleWrapper.classList.remove("hide");
+  }
 }

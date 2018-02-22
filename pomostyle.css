@@ -379,6 +379,54 @@ h3 {
 	margin-top : 48px;
 }
 
+.info-div {
+	display : none;
+}
+
+.show-info {
+	display : block;
+	background-color : #F5BE41;
+	margin-bottom : 15px;
+	border-radius : 2px;
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	text-align : justify;
+	font-family : "indie flower", cursive;
+	color : #fff;
+	font-size : 22px;
+	border-top : solid 1px steelblue;
+	overflow: hidden;
+}
+
+.close {
+	float : right;
+	height : 40px;
+	width : 40px;
+	font-size: 40px;
+	padding : 0;
+	line-height : 40px;
+	color : #fff;
+	background-color : #F5BE41;
+	cursor : pointer;
+	border : none;
+}
+
+.info-div-inner {
+	height : 100%;
+	width : 90%;
+	margin : 5% 0;
+	padding : 0 5%;
+	overflow : auto;
+}
+
+.info-div-inner a {
+	color : #c73721;
+}
+
+.info-div-title{
+	font-size : 23px;
+	text-align : center;
+}
+
 .circle-wrapper {
 	height : calc(100% - 15px - 75px);
 	background-color : #fff;
@@ -394,6 +442,7 @@ h3 {
 	flex-flow : column nowrap;
 	justify-content: space-around;
 	align-items : center;
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
 h3 {
@@ -483,6 +532,10 @@ h3 {
 @media (min-height : 400px) {
 
 	h3 {
+		font-size : 30px;
+	}
+
+	.center-btn {
 		font-size : 30px;
 	}
 }
