@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
     undoCSSChanges();
     timerInterval.stop();
   });
-  document.getElementsByClassName("adjuster-up")[0].addEventListener("click", function(){
+  adjusterUp[0].addEventListener("click", function(){
     adjustersObj.up("work");
   });
-  document.getElementsByClassName("adjuster-down")[0].addEventListener("click", function(){
+  adjusterDown[0].addEventListener("click", function(){
     adjustersObj.down("work");
   });
-  document.getElementsByClassName("adjuster-up")[1].addEventListener("click", function(){
+  adjusterUp[1].addEventListener("click", function(){
     adjustersObj.up("break");
   });
-  document.getElementsByClassName("adjuster-down")[1].addEventListener("click", function(){
+  adjusterDown[1].addEventListener("click", function(){
     adjustersObj.down("break");
   });
   document.getElementsByClassName("volume")[0].addEventListener("click", volume);
@@ -44,7 +44,17 @@ breakDuration = 60000;
 started = false,
 running = false,
 box = document.getElementsByClassName("box"),
-chimes = document.getElementsByClassName("chimes");
+chimes = document.getElementsByClassName("chimes"),
+adjusterUp = document.getElementsByClassName("adjuster-up"),
+adjusterDown = document.getElementsByClassName("adjuster-down"),
+toBeCovered = document.getElementsByClassName("to-be-covered"),
+coverBox = document.getElementsByClassName("cover-box"),
+workText = document.getElementsByClassName("work-text"),
+workTime = document.getElementsByClassName("work-time"),
+breakText = document.getElementsByClassName("break-text"),
+breakTime = document.getElementsByClassName("break-time"),
+volumeUp = document.getElementsByClassName("fa-volume-up"),
+questionCircleO = document.getElementsByClassName("fa-question-circle-o");
 
 
 function playAnimationWork(){
@@ -57,12 +67,12 @@ function playAnimationWork(){
     box[i].classList.remove("paused");
     box[i].style.animationDuration = workDuration + "ms";
   }
-  document.getElementsByClassName("to-be-covered")[0].classList.remove("paused");
-  document.getElementsByClassName("to-be-covered")[0].classList.add("green-to-red-end");
-  document.getElementsByClassName("to-be-covered")[0].style.animationDuration = workDuration + "ms";
-  document.getElementsByClassName("cover-box")[0].classList.remove("paused");
-  document.getElementsByClassName("cover-box")[0].classList.add("green-to-red-end");
-  document.getElementsByClassName("cover-box")[0].style.animationDuration = workDuration + "ms";
+  toBeCovered[0].classList.remove("paused");
+  toBeCovered[0].classList.add("green-to-red-end");
+  toBeCovered[0].style.animationDuration = workDuration + "ms";
+  coverBox[0].classList.remove("paused");
+  coverBox[0].classList.add("green-to-red-end");
+  coverBox[0].style.animationDuration = workDuration + "ms";
 }
 
 function playAnimationBreak() {
@@ -76,20 +86,20 @@ function playAnimationBreak() {
     box[i].classList.remove("paused");
     box[i].style.animationDuration = breakDuration + "ms";
   }
-  document.getElementsByClassName("to-be-covered")[0].classList.remove("paused");
-  document.getElementsByClassName("to-be-covered")[0].classList.add("red-to-blue-end");
-  document.getElementsByClassName("to-be-covered")[0].style.animationDuration = breakDuration + "ms";
-  document.getElementsByClassName("cover-box")[0].classList.remove("paused");
-  document.getElementsByClassName("cover-box")[0].classList.add("red-to-blue-end");
-  document.getElementsByClassName("cover-box")[0].style.animationDuration = breakDuration + "ms";
+  toBeCovered[0].classList.remove("paused");
+  toBeCovered[0].classList.add("red-to-blue-end");
+  toBeCovered[0].style.animationDuration = breakDuration + "ms";
+  coverBox[0].classList.remove("paused");
+  coverBox[0].classList.add("red-to-blue-end");
+  coverBox[0].style.animationDuration = breakDuration + "ms";
 }
 
 function pauseAnimation(){
   for (var i = 0; i < box.length; i++){
     box[i].classList.add("paused");
   }
-  document.getElementsByClassName("to-be-covered")[0].classList.add("paused");
-  document.getElementsByClassName("cover-box")[0].classList.add("paused");
+  toBeCovered[0].classList.add("paused");
+  coverBox[0].classList.add("paused");
 }
 
 function resetAnimation() {
@@ -101,54 +111,54 @@ function resetAnimation() {
     box[1].classList.remove("deg180-red-to-blue");
     box[2].classList.remove("deg270-red-to-blue");
     box[3].classList.remove("deg360-red-to-blue");
-    document.getElementsByClassName("to-be-covered")[0].classList.remove("green-to-red-end");
-    document.getElementsByClassName("to-be-covered")[0].classList.remove("red-to-blue-end");
-    document.getElementsByClassName("cover-box")[0].classList.remove("green-to-red-end");
-    document.getElementsByClassName("cover-box")[0].classList.remove("red-to-blue-end");
+    toBeCovered[0].classList.remove("green-to-red-end");
+    toBeCovered[0].classList.remove("red-to-blue-end");
+    coverBox[0].classList.remove("green-to-red-end");
+    coverBox[0].classList.remove("red-to-blue-end");
     for (var i = 0; i < box.length; i++){
       box[i].classList.add("paused");
     }
 }
 
 function workPhaseCSSChanges() {
-  document.getElementsByClassName("break-text")[0].classList.add("hide");
-  document.getElementsByClassName("break-time")[0].classList.add("hide");
-  document.getElementsByClassName("adjuster-down")[0].classList.add("hide");
-  document.getElementsByClassName("adjuster-up")[0].classList.add("hide");
-  document.getElementsByClassName("work-text")[0].classList.add("text-timer-phase");
-  document.getElementsByClassName("work-time")[0].classList.add("time-timer-phase");
-  document.getElementsByClassName("fa-volume-up")[0].classList.add("fa-timer-phase");
-  document.getElementsByClassName("fa-question-circle-o")[0].classList.add("fa-timer-phase");
+  breakText[0].classList.add("hide");
+  breakTime[0].classList.add("hide");
+  adjusterDown[0].classList.add("hide");
+  adjusterUp[0].classList.add("hide");
+  workText[0].classList.add("text-timer-phase");
+  workTime[0].classList.add("time-timer-phase");
+  volumeUp[0].classList.add("fa-timer-phase");
+  questionCircleO[0].classList.add("fa-timer-phase");
 }
 
 function breakPhaseCSSChanges() {
-  document.getElementsByClassName("break-text")[0].classList.remove("hide");
-  document.getElementsByClassName("break-text")[0].classList.add("text-timer-phase");
-  document.getElementsByClassName("break-time")[0].classList.remove("hide");
-  document.getElementsByClassName("break-time")[0].classList.add("time-timer-phase");
-  document.getElementsByClassName("adjuster-down")[1].classList.add("hide");
-  document.getElementsByClassName("adjuster-up")[1].classList.add("hide");
-  document.getElementsByClassName("work-text")[0].classList.remove("text-timer-phase");
-  document.getElementsByClassName("work-text")[0].classList.add("hide");
-  document.getElementsByClassName("work-time")[0].classList.remove("time-timer-phase");
-  document.getElementsByClassName("work-time")[0].classList.add("hide");
+  breakText[0].classList.remove("hide");
+  breakText[0].classList.add("text-timer-phase");
+  breakTime[0].classList.remove("hide");
+  breakTime[0].classList.add("time-timer-phase");
+  adjusterDown[1].classList.add("hide");
+  adjusterUp[1].classList.add("hide");
+  workText[0].classList.remove("text-timer-phase");
+  workText[0].classList.add("hide");
+  workTime[0].classList.remove("time-timer-phase");
+  workTime[0].classList.add("hide");
 }
 
 function undoCSSChanges() {
-  document.getElementsByClassName("work-text")[0].classList.remove("hide");
-  document.getElementsByClassName("work-text")[0].classList.remove("text-timer-phase");
-  document.getElementsByClassName("work-time")[0].classList.remove("hide");
-  document.getElementsByClassName("work-time")[0].classList.remove("time-timer-phase");
-  document.getElementsByClassName("adjuster-down")[0].classList.remove("hide");
-  document.getElementsByClassName("adjuster-up")[0].classList.remove("hide");
-  document.getElementsByClassName("adjuster-down")[1].classList.remove("hide");
-  document.getElementsByClassName("adjuster-up")[1].classList.remove("hide");
-  document.getElementsByClassName("break-text")[0].classList.remove("text-timer-phase");
-  document.getElementsByClassName("break-text")[0].classList.remove("hide");
-  document.getElementsByClassName("break-time")[0].classList.remove("time-timer-phase");
-  document.getElementsByClassName("break-time")[0].classList.remove("hide");
-  document.getElementsByClassName("fa-volume-up")[0].classList.remove("fa-timer-phase");
-  document.getElementsByClassName("fa-question-circle-o")[0].classList.remove("fa-timer-phase");
+  workText[0].classList.remove("hide");
+  workText[0].classList.remove("text-timer-phase");
+  workTime[0].classList.remove("hide");
+  workTime[0].classList.remove("time-timer-phase");
+  adjusterDown[0].classList.remove("hide");
+  adjusterUp[0].classList.remove("hide");
+  adjusterDown[1].classList.remove("hide");
+  adjusterUp[1].classList.remove("hide");
+  breakText[0].classList.remove("text-timer-phase");
+  breakText[0].classList.remove("hide");
+  breakTime[0].classList.remove("time-timer-phase");
+  breakTime[0].classList.remove("hide");
+  volumeUp[0].classList.remove("fa-timer-phase");
+  questionCircleO[0].classList.remove("fa-timer-phase");
 }
 
 function numberDecorator(number) {
@@ -289,16 +299,18 @@ function volume(event) {
 }
 
 function info(event){
-  var circleWrapper = document.getElementsByClassName("circle-wrapper")[0];;
+
+  var circleWrapper = document.getElementsByClassName("circle-wrapper")[0],
+  infoDiv = document.getElementsByClassName("info-div");
   if (event.target.classList.contains("center-btn") || event.target.classList.contains("fa-question-circle-o")){
     var height = window.getComputedStyle(circleWrapper, null).getPropertyValue("height");
     var width = window.getComputedStyle(circleWrapper, null).getPropertyValue("width");
-    document.getElementsByClassName("info-div")[0].style.height = height;
-    document.getElementsByClassName("info-div")[0].style.width = width;
-    document.getElementsByClassName("info-div")[0].classList.add("show-info");
+    infoDiv[0].style.height = height;
+    infoDiv[0].style.width = width;
+    infoDiv[0].classList.add("show-info");
     circleWrapper.classList.add("hide");
   } else if (event.target.classList.contains("close")) {
-    document.getElementsByClassName("info-div")[0].classList.remove("show-info");
+    infoDiv[0].classList.remove("show-info");
     circleWrapper.classList.remove("hide");
   }
 }
