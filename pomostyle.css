@@ -385,16 +385,17 @@ h3 {
 
 .show-info {
 	display : block;
-	background-color : #F5BE41;
+	background-color : #fff;
 	margin-bottom : 15px;
 	border-radius : 2px;
 	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 	text-align : justify;
 	font-family : "indie flower", cursive;
-	color : #fff;
+	color : #F5BE41;
 	font-size : 22px;
 	border-top : solid 1px #F5BE41;
 	overflow: hidden;
+	font-weight : 700;
 }
 
 .close {
@@ -404,10 +405,11 @@ h3 {
 	font-size: 40px;
 	padding : 0;
 	line-height : 40px;
-	color : #fff;
-	background-color : #F5BE41;
+	color : #F5BE41;
+	background-color : #fff;
 	cursor : pointer;
 	border : none;
+	overflow : hidden;
 }
 
 .info-div-inner {
@@ -419,7 +421,7 @@ h3 {
 }
 
 .info-div-inner a {
-	color : #c73721;
+	color : #31A9B8;
 }
 
 .info-div-title{
@@ -471,9 +473,10 @@ h3 {
 .work-time, .break-time {
 	display : flex;
 	flex-flow : row nowrap;
-	justify-content : space-around;
+	justify-content : space-between;
 	align-items : center;
 	width : 75%;
+	font-family: "indie flower", cursive;
 }
 
 .work-text, .break-text {
@@ -482,6 +485,25 @@ h3 {
 
 .time {
 	margin : 0 5px;
+	position : relative;
+	display : inline-block;
+	text-align : left;
+	width  :100%;
+	height : 100%;
+}
+
+.work-minutes, .break-minutes {
+	position : absolute;
+	right : 57.5%;
+	top : 50%;
+	transform : translateY(-50%);
+}
+
+.work-seconds, .break-seconds {
+	position : absolute;
+	left : 50%;
+	top : 50%;
+	transform : translateY(-50%);
 }
 
 .center-btn-div {
@@ -593,7 +615,7 @@ h3 {
 	}
 
 	.time-timer-phase {
-		font-size : 60px;
+		font-size : 50px;
 	}
 
 	.controls-wrapper {
