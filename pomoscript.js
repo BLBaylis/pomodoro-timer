@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 timerObj.changeTime = function(durationType, durationChange) {
-  if (0 >= timerObj[durationType + "Duration"] + durationChange || timerObj[durationType + "Duration"] + durationChange >= 600000){
-    console.log(timerObj.workDuration, timerObj.breakDuration);
+  if (0 >= timerObj[durationType + "Duration"] + durationChange || timerObj[durationType + "Duration"] + durationChange >= 6000000){
     return;
   }
   timerObj[durationType + "Duration"] += durationChange;
@@ -277,7 +276,6 @@ function info(event){
 }
 
 function infoOpen(event) {
-  console.log("infoOpen");
   var circleWrapper = document.getElementsByClassName("circle-wrapper")[0],
   infoDiv = document.getElementsByClassName("info-div");
   if (event.target.classList.contains("center-btn") || event.target.classList.contains("fa-question-circle-o")){
@@ -292,7 +290,6 @@ function infoOpen(event) {
 }
 
 function infoClose(event){
-  console.log(event.target);
   var circleWrapper = document.getElementsByClassName("circle-wrapper")[0],
   infoDiv = document.getElementsByClassName("info-div");
   if (event.target.classList.contains("click-exempt")){
